@@ -47,7 +47,7 @@ public class Estado {
 			return false;
 		}
 	}
-	private boolean comprobarMovimiento(Casilla origen, Casilla destino) {
+	protected boolean comprobarMovimiento(Casilla origen, Casilla destino) {
 		//...
 		// límites del tablero
 		// rango de la pieza

@@ -2,7 +2,11 @@ package ajedrea.juego;
 
 public class Pieza {
 	
-	private ColorPieza color;
-	private TipoPieza tipo;
+	public final ColorPieza color;
+	public final TipoPieza tipo;
 	
+	public Pieza(ColorPieza color, TipoPieza tipo) {
+		this.color = color;
+		this.tipo = tipo;
+	}
 }
