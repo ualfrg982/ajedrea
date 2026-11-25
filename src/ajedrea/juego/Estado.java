@@ -28,18 +28,24 @@ public class Estado {
 			turno = Turno.blancas;
 		}
 	}
-	
-	private void setPieza(Pieza pieza, int fila, int columna) {
-		this.tablero[fila][columna] = pieza;
+	private void setPieza(Pieza pieza, Casilla c) {
+		this.tablero[c.fila()][c.columna()] = pieza;
 	}
-	public void moverPieza(int filaOrigen, int columnaOrigen,
-							int filaDestino, int columnaDestino) {
-		if(comprobarMovimiento(casillaOrigen, casillaDestino)) {
-			setPieza
+//	private void setPieza(Pieza pieza, int fila, int columna) {
+//		this.tablero[fila][columna] = pieza;
+//	}
+	public boolean moverPieza(Casilla origen, Casilla destino) {
+		var pieza = this.getPieza(origen);
+		if(comprobarMovimiento(origen, destino)) {
+			this.setPieza(null, origen);
+			this.setPieza(pieza, destino);
+			this.turnar();
+			return true;
+		} else {
+			return false;
 		}
-		
 	}
-	private boolean comprobarMovimiento(int[][] casillaOrigen, int[][] casillaDestino) {
+	private boolean comprobarMovimiento(Casilla origen, Casilla destino) {
 		//...
 		// límites del tablero
 		// rango de la pieza
