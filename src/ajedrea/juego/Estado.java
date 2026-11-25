@@ -40,8 +40,10 @@ public class Estado {
 			this.setPieza(null, origen);
 			this.setPieza(pieza, destino);
 			this.turnar();
+			//...
 			return true;
 		} else {
+			//...
 			return false;
 		}
 	}
@@ -50,9 +52,25 @@ public class Estado {
 		// límites del tablero
 		// rango de la pieza
 		// piezas obstáculo
+		// promoción de peón
 		// jaque
+		// mate
 		return true;
 	}
 	
+	public boolean enrocar(Enroque tipo) {
+		if(comprobarEnroque(tipo)) {
+			//...
+			// realizar enroque
+			return true;
+		} else {
+			//...
+			return false;
+		}
+	}
+	private boolean comprobarEnroque(Enroque tipo) {
+		//...
+		return true;
+	}
 	
 }
