@@ -2,11 +2,33 @@ package ajedrea.juego;
 
 public class Pieza {
 	
-	public final ColorPieza color;
-	public final TipoPieza tipo;
+	public final Color color;
+	public final Tipo tipo;
 	
-	public Pieza(ColorPieza color, TipoPieza tipo) {
-		this.color = color;
-		this.tipo = tipo;
+	public Pieza(Color color, Tipo tipo) {
+		this.color = (color==null)? Color.blanco : color;
+		this.tipo = (tipo==null)? Tipo.peon : tipo;
 	}
+	
+	@Override
+	public String toString() {
+		boolean esBlanca = (this.color == Color.blanco);
+		switch(this.tipo) {
+		case peon:
+			return esBlanca ? "♙" : "♟";
+		case torre:
+			return esBlanca ? "♖" : "♜";
+		case caballo:
+			return esBlanca ? "♘" : "♞";
+		case alfil:
+			return esBlanca ? "♗" : "♝";
+		case reina:
+			return esBlanca ? "♕" : "♛";
+		case rey:
+			return esBlanca ? "♔" : "♚";
+		default:
+			return "?";
+		}
+	}
+	
 }

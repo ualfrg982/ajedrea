@@ -1,5 +1,5 @@
 package ajedrea.juego;
 
-public enum TipoPieza {
+public enum Tipo {
 	peon, alfil, caballo, torre, reina, rey
 }

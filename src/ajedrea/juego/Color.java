@@ -1,5 +1,5 @@
 package ajedrea.juego;
 
-public enum ColorPieza {
+public enum Color {
 	negro, blanco
 }
